@@ -362,4 +362,52 @@ button.signup-button {
   font-weight: 400;
   line-height: 24px;
   color: #717171;
+}
+
+.guide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 21px 0px 48px 0px;
+  background-color: #FFFFFF;
+}
+
+.guide-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 49.47px;
+}
+
+.guide-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 601px;
+  gap: 16px;
+}
+
+.guide-info h2 {
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 44px;
+  color: #4D4D4D;
+}
+
+.guide-info p {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #717171;
+}
+
+.guide-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+  width: 128px;
+  height: 52px;
+  border-radius: 4px;
+  background-color: #4CAF4F;
+  color: #FFFFFF;
 }/*# sourceMappingURL=home.css.map */

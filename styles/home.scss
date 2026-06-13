@@ -404,3 +404,34 @@ button.signup-button {
   @include desc-text();
   color: $lightGreyColor;  
 }
+
+.guide {
+  @include centered-col-flex();
+  padding: 21px 0px 48px 0px;
+  background-color: $whiteColor;
+}
+
+.guide-content {
+  @include centered-row-flex();
+  gap: 49.47px;
+}
+
+.guide-info {
+  @include centered-col-flex();
+  width: 601px;
+  gap: 16px;  
+}
+
+.guide-info h2 {
+  @include header-text();
+}
+
+.guide-info p {
+  @include small-text();
+  color: $lightGreyColor;
+}
+
+.guide-actions {
+  @include learn-more-btn();
+}
+
