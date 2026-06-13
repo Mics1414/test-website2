@@ -226,3 +226,72 @@ button.signup-button {
     width: 100%;
 }
 
+.community {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0px 21px 0px;
+    width: 100%;
+    background-color: $whiteColor;
+}
+
+.community-intro p {
+  @include desc-text();
+  color: $lightGreyColor;
+}
+
+.community-content, .community-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.community-intro h2 {
+  @include header-text();
+  max-width: 542px;
+  text-align: center;
+}
+
+.community-cards {
+  @include centered-row-flex();
+  width: 100%;
+  gap: 127.5px;
+  margin-top: 8px;
+}
+
+.community-cards img {
+  width: 65px;
+  height: 56px;
+  margin-bottom: 8px;
+}
+
+.community-cards h2 {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 36px;
+  max-width: 231px;
+  color: $secondaryColor;
+}
+
+.community-cards p {
+  @include small-text();
+  color: $lightGreyColor;
+}
+
+.membership-card, .national-card, .clubs-card {
+  max-width: 299px;
+  @include center-alignment-col();
+  text-align: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0px 2px 4px $boxShadowColor;
+}
+
+.clubs-card, .membership-card {
+  height: 260px;
+}
+
+.national-card {
+  height: 280px;
+}
