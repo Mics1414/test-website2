@@ -327,3 +327,80 @@ button.signup-button {
 .pixelgrade-actions {
   @include learn-more-btn();
 }
+
+.statistics {
+    padding: 64px 144px;
+    display: flex;
+}
+
+.stats-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 72px;
+}
+
+.stats-intro {
+    width: 540px;
+}
+
+.stats-intro h2 {
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 40px;
+  color: $secondaryColor;
+}
+
+.stats-intro span {
+  color: $primaryColor;
+}
+
+.stats-intro p {
+  @include desc-text();
+  margin-top: 8px;
+  color: $darkFontColor;
+}
+
+.stats-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 540px;
+}
+
+.stats-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.stats-grid img {
+  width: 48px;
+  height: 48px;
+}
+
+.stats-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 255px;
+  gap: 16px;
+}
+
+.stats-grid span {
+  display: flex;
+  flex-direction: column;
+}
+
+.stats-grid h2 {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 36px;
+  color: $darkFontColor;
+}
+
+.stats-grid p {
+  @include desc-text();
+  color: $lightGreyColor;  
+}
