@@ -1,0 +1,146 @@
+$bgColor: #F5F7FA;
+$primaryColor: #4CAF4F;
+$secondaryColor: #4D4D4D;
+$lightGreyColor: #717171;
+$neutralGray: #89939E;
+$darkFontColor: #18191F; 
+$whiteColor: #FFFFFF;
+$boxShadowColor: #ABBED133;
+$popupsColor: #F5F7FA;
+$popupShadowColor: #ABBED166;
+$darkColor: #263238;
+$footerContrastColor: #D9DBE1;
+$footerInputColor: #3c474c;
+
+$fontFamily: inter;
+
+@mixin learn-more-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+  width: 128px;
+  height: 52px;
+  border-radius: 4px;
+  background-color: $primaryColor;
+  color: $whiteColor;
+}
+
+@mixin secondary-btn {
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+  gap: 8px;
+  color: $primaryColor;
+}
+
+@mixin header-text {
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 44px;
+  color: $secondaryColor;
+}
+
+@mixin mini-header-text {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+}
+
+@mixin desc-text {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+@mixin small-text {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+@mixin centered-row-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+@mixin centered-col-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@mixin centered-spacebet-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin center-alignment-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: $bgColor;
+  font-family: $fontFamily;
+}
+
+.container {
+  max-width: 1440px;
+}
+
+.nav-bar {
+  @include centered-spacebet-flex();
+  min-height: 102px;
+  padding: 22px 120px 22px 105px;
+}
+
+.nav-menu {
+  @include centered-spacebet-flex();
+  gap: 50px;
+  color: $darkFontColor;
+}
+
+.nav-content {
+  @include centered-spacebet-flex();
+  flex-direction: row;
+  width: 100%;
+}
+
+.nav-content img {
+  max-width: 154.49px;
+  width: 100%;
+  height: auto;
+}
+
+.nav-actions button {
+  display: flex;
+  flex-direction: row;
+  padding: 10px 20px;
+}
+
+.nav-actions {
+  display: flex;
+  flex-direction: row;
+  gap: 14px;
+}
+
+button.login-button { 
+  color: $primaryColor;
+  border-radius: 6px;
+}
+
+button.signup-button { 
+  background-color: $primaryColor;
+  color: $whiteColor;
+  border-radius: 6px;
+}
+
