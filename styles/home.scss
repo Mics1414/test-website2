@@ -435,3 +435,80 @@ button.signup-button {
   @include learn-more-btn();
 }
 
+.customers-content {
+    padding: 32px 144px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 78px;
+}
+
+.customers-partners {
+    display: flex;
+    flex-direction: row;
+    display: flex;
+    flex-direction: row;
+    gap: 41px;
+}
+
+.customers-media {
+    max-width: 326px;
+    width: 100%;
+}
+
+.customers-intro p {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  color: $lightGreyColor;
+}
+
+.customers-intro h3 {
+  @include mini-header-text();
+  margin: 16px 0px 8px 0px;
+  color: $primaryColor;
+}
+
+.customers-intro span {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: $neutralGray;
+}
+
+.customers-info {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    max-width: 748px;
+    width: 100%;
+}
+
+.customers-info .customers-partners img {
+  max-width: 48px;
+  width: 100%;
+  gap: 41px;
+}
+
+.customers-btn {
+  @include secondary-btn();
+}
+
+.customers-btn img {
+  max-width: 24px;
+  width: 100%;
+}
+
+button.meet-customers {
+  max-width: 188px;
+  width: 100%;
+  max-height: 28px;
+  height: 100%;
+}
+
+.customers-content .customers-extra {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 32px;
+}
