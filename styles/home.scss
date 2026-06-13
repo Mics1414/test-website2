@@ -174,7 +174,6 @@ button.signup-button {
     color: #717171;
 }
 
-
 .hero-actions {
   display: flex;
   justify-content: center;
@@ -185,11 +184,45 @@ button.signup-button {
   background-color: $primaryColor;
 }
 
-
 .hero-actions span {
   font-size: 16px;
   font-weight: 500;
   color: $whiteColor;
 }
 
+.clients {
+  @include center-alignment-col();
+  padding: 40px 0px 20px 0px;
+  background-color: #FFFFFF;
+}
+
+.clients-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 41px;
+    width: 100%;
+}
+
+.clients-intro {
+  @include center-alignment-col();
+  gap: 8px;
+}
+
+.clients-intro h2 {
+  @include header-text();
+}
+
+.clients-intro p {
+  @include desc-text();
+  color: $lightGreyColor;
+}
+
+.clients-showcase {
+    display: flex;
+    flex-direction: row;
+    padding: 0px 144px;
+    gap: 136px;
+    width: 100%;
+}
 

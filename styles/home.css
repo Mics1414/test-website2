@@ -107,4 +107,49 @@ button.signup-button {
   font-size: 16px;
   font-weight: 500;
   color: #FFFFFF;
+}
+
+.clients {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 0px 20px 0px;
+  background-color: #FFFFFF;
+}
+
+.clients-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 41px;
+  width: 100%;
+}
+
+.clients-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.clients-intro h2 {
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 44px;
+  color: #4D4D4D;
+}
+
+.clients-intro p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #717171;
+}
+
+.clients-showcase {
+  display: flex;
+  flex-direction: row;
+  padding: 0px 144px;
+  gap: 136px;
+  width: 100%;
 }/*# sourceMappingURL=home.css.map */
