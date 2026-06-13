@@ -295,3 +295,35 @@ button.signup-button {
 .national-card {
   height: 280px;
 }
+
+.pixelgrade {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 21px 0px 48px 0px;
+    background-color: $whiteColor;
+}
+
+.pixelgrade-content {
+  @include centered-row-flex();
+  gap: 49px;
+}
+
+.pixelgrade-info {
+  @include centered-col-flex();
+  width: 601px;
+  gap: 16px;  
+}
+
+.pixelgrade-info h2 {
+  @include header-text();
+}
+
+.pixelgrade-info p {
+  @include small-text();
+  color: $lightGreyColor;
+}
+
+.pixelgrade-actions {
+  @include learn-more-btn();
+}
