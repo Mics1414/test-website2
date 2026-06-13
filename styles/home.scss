@@ -512,3 +512,79 @@ button.meet-customers {
     align-items: center;
     gap: 32px;
 }
+
+.marketing {
+  background-color: $whiteColor;
+}
+
+.marketing-content {
+    padding: 48px 144px 94.6px 144px;
+}
+
+.marketing-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.marketing .marketing-intro h2 {
+  @include header-text();
+}
+
+.marketing .marketing-intro p {
+  @include desc-text();
+  max-width: 628px;
+  width: 100%;
+  gap: 8px;
+  text-align: center;
+}
+
+.marketing-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.marketing-cards {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 24px;
+    height: 366px;
+}
+
+.marketing-cards .pop-ups {
+    display: flex;
+    flex-direction: column;
+    max-width: 317px;
+    width: 100%;
+    height: 176px;
+    gap: 16px;
+    align-items: center;
+    background-color: #F5F7FA;
+    z-index: 10;
+    transform: translateY(-100px);
+    border-radius: 8px;
+    justify-content: center;
+}
+
+.pop-ups {
+  box-shadow: 0px 8px 16px $popupShadowColor;
+}
+
+.pop-ups p {
+  @include mini-header-text();
+  text-align: center;
+  color: $lightGreyColor;
+}
+
+.pop-ups .marketing-actions  {
+  @include secondary-btn();
+}
+
+.marketing-cards-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
