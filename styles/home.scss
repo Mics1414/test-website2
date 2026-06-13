@@ -144,3 +144,52 @@ button.signup-button {
   border-radius: 6px;
 }
 
+.hero-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 96px 144px;
+}
+
+
+.hero-info h2 {
+  font-size: 64px;
+  font-weight: 600;
+  line-height: 76px;
+  color: $secondaryColor;
+}
+
+
+.hero-info span {
+  color: $primaryColor;
+}
+
+
+.hero-info {
+    @include centered-col-flex();
+    gap: 16px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #717171;
+}
+
+
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+  width: 128px;
+  height: 52px;
+  border-radius: 4px;
+  background-color: $primaryColor;
+}
+
+
+.hero-actions span {
+  font-size: 16px;
+  font-weight: 500;
+  color: $whiteColor;
+}
+
+
