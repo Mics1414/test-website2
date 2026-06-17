@@ -84,6 +84,16 @@ $fontFamily: inter;
   align-items: center;
 }
 
+@mixin mobile-header-texts {
+  font-size: 40px;
+  line-height: 50px;
+}
+
+@mixin tablet-header-texts {
+  font-size: 34px;
+  line-height: 40px;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -93,26 +103,79 @@ html {
   font-family: $fontFamily;
 }
 
+.body img {
+  overflow: auto;
+}
+
 .container {
   max-width: 1440px;
 }
 
 .nav-bar {
   @include centered-spacebet-flex();
-  min-height: 102px;
-  padding: 22px 120px 22px 105px;
+  flex-direction: column;
+
+  @media (min-width: 600px) {
+    max-height: 130px;
+    gap: 10px
+  }
+
+  @media (min-width: 990px) {
+    max-height: 84px;
+    height: 100%;
+  }
 }
 
 .nav-menu {
   @include centered-spacebet-flex();
+  @include desc-text();
   gap: 50px;
   color: $darkFontColor;
+
+  @media (max-width: 990px) {
+    display: none;
+  }
+
+  // @media (max-width: 990px) {
+  // }
+
+  @media (min-width: 991px) {
+    position: static;
+    height: auto;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    transform: none;
+    background: none;
+  }
+
+  @media (min-width: 1200px) {
+    gap: 50px;
+  }
 }
 
 .nav-content {
   @include centered-spacebet-flex();
   flex-direction: row;
   width: 100%;
+  padding: 22px 120px 22px 105px;
+
+  @media (max-width: 599px) {
+    padding: 40px 40px 0px 40px;
+  }
+
+  @media (min-width: 600px) {
+    padding: 40px 40px 0px 40px;
+  }
+
+  @media (min-width: 767px) {
+    padding: 40px 80px 0px 80px;
+  }
+
+  @media (min-width: 991px) {
+    padding: 22px 120px 22px 105px;
+  }
 }
 
 .nav-content img {
@@ -125,6 +188,36 @@ html {
   display: flex;
   flex-direction: row;
   padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+
+  @media (max-width: 599px) {
+    display: flex;
+  }
+
+  @media (min-width: 600px) {
+    display: flex;
+  }
+
+  @media (min-width: 991px) {
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+
+  @media (min-width: 1200px) {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+.nav-actions .nav-drawer {
+   @media (max-width: 990px) {
+    display: flex;
+  }
+
+  @media (min-width: 991px) {
+    display: none;
+  }
 }
 
 .nav-actions {
@@ -144,19 +237,84 @@ button.signup-button {
   border-radius: 6px;
 }
 
+
 .hero-content {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 96px 144px;
+
+  @media (max-width: 599px) {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 40px;
+    padding: 40px;
+  }
+
+  @media (min-width: 600px) {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 40px;
+    padding: 40px;
+  }
+
+  @media (min-width: 767px) {
+    padding: 40px 80px;
+  }
+
+  @media (min-width: 991px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 96px 144px;
+  }
 }
 
+.hero-content img {
+  max-width: 391px;
+  width: 100%;
+
+  @media (max-width: 599px) {
+    max-width: 450px;
+    width: 100%;
+  }
+
+  @media (min-width: 600px) {
+    max-width: 450px;
+    width: 100%;
+  }
+
+  @media (min-width: 767px) {
+    max-width: 350px;
+    width: 100%;
+  }
+
+  @media (min-width: 991px) {
+    max-width: 391px;
+    width: 100%;
+  }
+}
 
 .hero-info h2 {
   font-size: 64px;
   font-weight: 600;
   line-height: 76px;
   color: $secondaryColor;
+
+  @media (max-width: 599px) {
+    font-size: 54px;
+    line-height: 67px;
+  }
+
+  @media (min-width: 600px) {
+    font-size: 54px;
+    line-height: 67px;
+  }
+
+  @media (min-width: 991px) {
+    font-size: 64px;
+    line-height: 76px;
+  }
 }
 
 
@@ -167,11 +325,14 @@ button.signup-button {
 
 .hero-info {
     @include centered-col-flex();
+    @include desc-text();
     gap: 16px;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-    color: #717171;
+    color: $lightGreyColor;
+
+  @media (max-width: 991px) {
+    text-align: center;
+    align-items: center;
+  }
 }
 
 .hero-actions {
@@ -192,16 +353,34 @@ button.signup-button {
 
 .clients {
   @include center-alignment-col();
-  padding: 40px 0px 20px 0px;
   background-color: #FFFFFF;
 }
 
 .clients-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 41px;
+  width: 100%;
+  padding: 40px 144px 20px 144px;
+
+  @media (max-width: 599px) {
+    padding: 40px;
+  }
+
+  @media (min-width: 600px) {
+    padding: 40px;
+  }
+
+  @media (max-width: 767px) {
+    gap: 24px;
+    padding: 40px 80px;
+  }
+
+  @media (min-width: 991px) {
     gap: 41px;
-    width: 100%;
+    padding: 40px 144px 20px 144px;
+  }
 }
 
 .clients-intro {
@@ -211,6 +390,22 @@ button.signup-button {
 
 .clients-intro h2 {
   @include header-text();
+
+  @media (max-width: 599px) {
+    @include mobile-header-texts();
+  }
+
+  @media (min-width: 600px) {
+    @include mobile-header-texts();
+  }
+
+  @media (min-width: 767px) {
+    @include tablet-header-texts();
+  }
+
+  @media (min-width: 991px) {
+    @include header-text();
+  }
 }
 
 .clients-intro p {
@@ -219,20 +414,71 @@ button.signup-button {
 }
 
 .clients-showcase {
-    display: flex;
+  display: flex;
+  flex-direction: row;
+  gap: 136px;
+  width: 100%;
+
+  @media (max-width: 599px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+  }
+
+  @media (min-width: 600px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+  }
+
+  @media (min-width: 767px) {
     flex-direction: row;
-    padding: 0px 144px;
-    gap: 136px;
+    align-items: center;
+    gap: 45px;
+  }
+
+  @media (min-width: 991px) {
+    justify-content: space-between;
+  }
+}
+
+.clients-showcase img {
+  max-width: 48px;
+
+  @media (max-width: 767px) {
+    max-width: 80px;
     width: 100%;
+  }
 }
 
 .community {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px 0px 21px 0px;
-    width: 100%;
-    background-color: $whiteColor;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: $whiteColor;
+}
+
+.community-content {
+  padding: 20px 144px 21px 144px;
+
+  @media (max-width: 599px) {
+    padding: 40px;
+  }
+
+  @media (min-width: 600px) {
+    padding: 40px;
+  }
+
+  @media (min-width: 767px) {
+    padding: 0px 80px;
+  }
+
+  @media (min-width: 991px) {
+    padding: 20px 144px 21px 144px;
+  }
 }
 
 .community-intro p {
@@ -245,19 +491,64 @@ button.signup-button {
     flex-direction: column;
     align-items: center;
     gap: 8px;
+
+  @media (max-width: 600px) {
+    gap: 16px;
+  }
 }
 
 .community-intro h2 {
   @include header-text();
   max-width: 542px;
   text-align: center;
+
+  @media (max-width: 599px) {
+    @include mobile-header-texts();
+  }
+
+  @media (min-width: 600px) {
+    @include mobile-header-texts();
+  }
+
+  @media (min-width: 767px) {
+    @include tablet-header-texts();
+  }
+
+  @media (min-width: 991px) {
+    @include header-text();
+  }
 }
 
 .community-cards {
   @include centered-row-flex();
-  width: 100%;
   gap: 127.5px;
   margin-top: 8px;
+
+  @media (max-width: 599px) {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 16px;
+    gap: 30px;
+  }
+
+  @media (min-width: 600px) {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 16px;
+    gap: 30px;
+  }
+
+  @media (min-width: 991px) {
+    @include centered-row-flex();
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 50px;
+    margin-top: 8px;
+  }
+
+  @media (min-width: 1440px) {
+    gap: 127.5px;
+  }
 }
 
 .community-cards img {
@@ -272,6 +563,21 @@ button.signup-button {
   line-height: 36px;
   max-width: 231px;
   color: $secondaryColor;
+
+  @media (max-width: 599px) {
+    font-size: 30px;
+    line-height: 38px;
+  }
+
+  @media (min-width: 600px) {
+    font-size: 30px;
+    line-height: 38px;
+  }
+
+  @media (min-width: 991px) {
+    font-size: 28px;
+    line-height: 36px;
+  }
 }
 
 .community-cards p {
@@ -286,6 +592,16 @@ button.signup-button {
   justify-content: center;
   gap: 8px;
   box-shadow: 0px 2px 4px $boxShadowColor;
+
+  @media (max-width: 767px) {
+    max-width: 320px;
+    width: 100%;
+  }
+
+  @media (min-width: 991px) {
+    max-width: 299px;
+    width: 100%;
+  }
 }
 
 .clubs-card, .membership-card {
@@ -297,26 +613,137 @@ button.signup-button {
 }
 
 .pixelgrade {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 21px 0px 48px 0px;
-    background-color: $whiteColor;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $whiteColor;
 }
 
 .pixelgrade-content {
   @include centered-row-flex();
   gap: 49px;
+  padding: 21px 0px 48px 0px;
+
+  @media (max-width: 599px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    text-align: center;
+    padding: 40px;
+  }
+
+  @media (min-width: 600px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    text-align: center;
+    padding: 40px;
+  }
+
+  @media (min-width: 767px) {
+    gap: 0px;
+    padding: 0px 80px;
+  }
+
+  @media (min-width: 991px) {
+    gap: 10px;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    padding: 42px 144px;
+  }
+
+  @media (min-width: 1200px) {
+    flex-direction: row;
+    gap: 49px;
+    justify-content: space-between;
+  }
+}
+
+.pixelgrade-content img {
+  max-width: 442px;
+  width: 100%;
+
+  @media (max-width: 599px) {
+    max-width: 450px;
+    width: 100%;
+  }
+
+  @media (min-width: 600px) {
+    max-width: 450px;
+    width: 100%;
+  }
+
+  @media (min-width: 767px) {
+    max-width: 442px;
+    width: 100%;
+  }
 }
 
 .pixelgrade-info {
   @include centered-col-flex();
-  width: 601px;
-  gap: 16px;  
+  gap: 16px; 
+
+  @media (max-width: 599px) {
+    width: 100%;
+    max-width: 500px;
+    align-items: center;
+    gap: 25px;
+  }
+  
+  @media (min-width: 600px) {
+    width: 100%;
+    max-width: 500px;
+    align-items: center;
+    gap: 25px;
+  }
+
+  @media (min-width: 767px) {
+    width: 100%;
+    max-width: 680px;
+    gap: 30px;
+    align-items: center;
+    padding: 40px;
+  }
+
+  @media (min-width: 991px) {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    max-width: 601px;
+    width: 100%;
+    padding: 0;
+  }
+
+  @media (min-width: 1200px) {
+    gap: 16px; 
+    text-align: left;
+    align-items: flex-start;
+    padding: 0px;
+  }
 }
 
 .pixelgrade-info h2 {
   @include header-text();
+  max-width: 500px;
+  width: 100%;
+
+  @media (max-width: 599px) {
+    @include mobile-header-texts();
+  }
+
+  @media (min-width: 600px) {
+    @include mobile-header-texts();
+  }
+
+  @media (min-width: 767px) {
+    @include tablet-header-texts();
+  }
+
+  @media (min-width: 991px) {
+    @include header-text();
+  }
 }
 
 .pixelgrade-info p {
@@ -329,8 +756,19 @@ button.signup-button {
 }
 
 .statistics {
-    padding: 64px 144px;
     display: flex;
+
+  @media (max-width: 599px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  @media (min-width: 600px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
 }
 
 .stats-content {
@@ -340,10 +778,57 @@ button.signup-button {
     justify-content: center;
     width: 100%;
     gap: 72px;
+    padding: 64px 144px;
+
+  @media (max-width: 599px) {
+    flex-direction: column;
+    gap: 50px;
+    padding: 40px;
+  }
+
+  @media (min-width: 600px) {
+    flex-direction: column;
+    gap: 50px;
+    padding: 40px;
+  }
+
+  @media (min-width: 767px) {
+    gap: 72px;
+    padding: 0px 80px;
+  }
+
+  @media (min-width: 991px) {
+    padding: 64px 144px;
+  }
+
+  @media (min-width: 1200px) {
+    flex-direction: row;
+  }
 }
 
 .stats-intro {
     width: 540px;
+
+  @media (max-width: 599px) {
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+  }
+    
+  @media (min-width: 600px) {
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+  }
+
+  @media (min-width: 767px) {
+    width: 100%;
+    max-width: 540px;
+  }
+
+  @media (min-width: 1200px) {
+    text-align: left;
+  }
 }
 
 .stats-intro h2 {
@@ -351,6 +836,22 @@ button.signup-button {
   font-weight: 600;
   line-height: 40px;
   color: $secondaryColor;
+
+  @media (max-width: 599px) {
+    @include mobile-header-texts();
+  }
+
+  @media (min-width: 600px) {
+    @include mobile-header-texts();
+  }
+
+  @media (min-width: 767px) {
+    @include tablet-header-texts();
+  }
+
+  @media (min-width: 991px) {
+    @include header-text();
+  }
 }
 
 .stats-intro span {
@@ -368,11 +869,39 @@ button.signup-button {
     flex-direction: column;
     gap: 40px;
     width: 540px;
+
+  @media (max-width: 600px) {
+    width: 100%;
+    max-width: 500px;
+    gap: 40px;
+    align-items: center;
+  }
+
+  @media (max-width: 767px) {
+    align-items: center;
+  }
 }
 
 .stats-row {
   display: flex;
   flex-direction: row;
+
+  @media (max-width: 599px) {
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+  }
+
+  @media (min-width: 600px) {
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+  }
+
+  @media (min-width: 767px) {
+    flex-direction: row;
+    justify-content: center;
+  }
 }
 
 .stats-grid img {
@@ -386,6 +915,11 @@ button.signup-button {
   align-items: center;
   width: 255px;
   gap: 16px;
+
+  @media (max-width: 600px) {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 .stats-grid span {
@@ -407,23 +941,109 @@ button.signup-button {
 
 .guide {
   @include centered-col-flex();
-  padding: 21px 0px 48px 0px;
   background-color: $whiteColor;
 }
 
 .guide-content {
   @include centered-row-flex();
   gap: 49.47px;
+  padding: 21px 144px 48px 144px;
+
+  @media (max-width: 599px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    text-align: center;
+    padding: 40px;
+  }
+
+  @media (min-width: 600px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    text-align: center;
+    padding: 40px;
+  }
+
+  @media (min-width: 991px) {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  @media (min-width: 767px) {
+    padding: 48px 80px;
+  }
+
+  @media (min-width: 991px) {
+    padding: 48px 144px;
+  }
+
+  @media (min-width: 1200px) {
+    @include centered-row-flex();
+    text-align: left;
+    gap: 49.47px;
+  }
+}
+
+.guide-content img {
+  max-width: 441.52px;
+  width: 100%;
+
+  @media (max-width: 600px) {
+    max-width: 450px;
+    width: 100%;
+  }
 }
 
 .guide-info {
   @include centered-col-flex();
-  width: 601px;
   gap: 16px;  
+
+ @media (max-width: 599px) {
+    align-items: center;
+  }
+
+  @media (min-width: 600px) {
+    align-items: center;
+  }
+
+  @media (min-width: 767px) {
+    align-items: center;
+  }
+
+  @media (min-width: 991px) {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  @media (min-width: 1200px) {
+    @include centered-col-flex();
+    align-items: flex-start;
+    text-align: left;
+    gap: 16px; 
+  }
 }
 
 .guide-info h2 {
   @include header-text();
+
+  @media (max-width: 599px) {
+    @include mobile-header-texts();
+  }
+
+  @media (min-width: 600px) {
+    @include mobile-header-texts();
+  }
+
+  @media (min-width: 767px) {
+    @include tablet-header-texts();
+  }
+
+  @media (min-width: 991px) {
+    @include header-text();
+  }
 }
 
 .guide-info p {
@@ -436,11 +1056,41 @@ button.signup-button {
 }
 
 .customers-content {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 78px;
+  padding: 32px 144px;
+
+  @media (max-width: 599px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 40px;
+  }
+
+  @media (min-width: 600px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 40px;
+  }
+
+  @media (min-width: 767px) {
+    padding: 48px 80px;
+  }
+
+  @media (min-width: 991px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
     padding: 32px 144px;
-    display: flex;
+  }
+
+  @media (min-width: 1200px) {
     flex-direction: row;
-    align-items: flex-start;
     gap: 78px;
+  }
 }
 
 .customers-partners {
@@ -449,11 +1099,44 @@ button.signup-button {
     display: flex;
     flex-direction: row;
     gap: 41px;
+
+  @media (max-width: 599px) {
+    flex-wrap: wrap;
+  }
+
+  @media (min-width: 600px) {
+    flex-wrap: wrap;
+  }  
+
+  @media (min-width: 1200px) {
+    gap: 41px;
+  }
 }
 
 .customers-media {
     max-width: 326px;
     width: 100%;
+
+  @media (max-width: 599px) {
+    max-width: 450px;
+    width: 100%;
+  }
+
+  @media (min-width: 600px) {
+    max-width: 450px;
+    width: 100%;
+  }
+
+  @media (min-width: 1200px) {
+    max-width: 326px;
+    width: 100%;
+  }
+}
+
+.customers-intro {
+  @media (max-width: 767px) {
+    align-items: center;
+  }
 }
 
 .customers-intro p {
@@ -461,12 +1144,36 @@ button.signup-button {
   font-weight: 500;
   line-height: 24px;
   color: $lightGreyColor;
+
+  @media (max-width: 599px) {
+    text-align: center;
+  }
+
+  @media (min-width: 600px) {
+    text-align: center;
+  }
+
+  @media (min-width: 1200px) {
+    text-align: left;
+  }
 }
 
 .customers-intro h3 {
   @include mini-header-text();
   margin: 16px 0px 8px 0px;
   color: $primaryColor;
+
+  @media (max-width: 599px) {
+    text-align: center;
+  }
+
+  @media (min-width: 600px) {
+    text-align: center;
+  }
+
+  @media (min-width: 1200px) {
+    text-align: left;
+  }
 }
 
 .customers-intro span {
@@ -482,12 +1189,50 @@ button.signup-button {
     gap: 32px;
     max-width: 748px;
     width: 100%;
+
+  @media (max-width: 599px) {
+    max-width: 100%;
+    align-items: center;
+    text-align: center;
+    padding: 0px 40px;
+  }
+
+  @media (min-width: 600px) {
+    max-width: 100%;
+    align-items: center;
+    text-align: center;
+    padding: 0px 40px;
+  }
+
+  @media (min-width: 991px) {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    flex-direction: column;
+  }
+
+  @media (min-width: 1200px) {
+    align-items: flex-start;
+    overflow: auto;
+    padding: 0px;
+  }
 }
 
 .customers-info .customers-partners img {
   max-width: 48px;
   width: 100%;
   gap: 41px;
+}
+
+.customers-partners {
+
+  @media (max-width: 599px) {
+    justify-content: center;
+  }
+
+  @media (min-width: 600px) {
+    justify-content: center;
+  }
 }
 
 .customers-btn {
@@ -510,15 +1255,32 @@ button.meet-customers {
     display: flex;
     flex-direction: row;
     align-items: center;
+    flex-wrap: wrap;
     gap: 32px;
+
+  @media (max-width: 599px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  @media (min-width: 600px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  @media (min-width: 1200px) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    overflow: hidden;
+    gap: 20px;
+  }
 }
 
 .marketing {
   background-color: $whiteColor;
-}
-
-.marketing-content {
-    padding: 48px 144px 94.6px 144px;
 }
 
 .marketing-intro {
@@ -530,6 +1292,22 @@ button.meet-customers {
 
 .marketing .marketing-intro h2 {
   @include header-text();
+
+  @media (max-width: 599px) {
+    @include mobile-header-texts();
+  }
+
+  @media (min-width: 600px) {
+    @include mobile-header-texts();
+  }
+
+  @media (min-width: 767px) {
+    @include tablet-header-texts();
+  }
+
+  @media (min-width: 991px) {
+    @include header-text();
+  }
 }
 
 .marketing .marketing-intro p {
@@ -538,12 +1316,32 @@ button.meet-customers {
   width: 100%;
   gap: 8px;
   text-align: center;
+  color: $lightGreyColor;
 }
 
 .marketing-content {
     display: flex;
     flex-direction: column;
     gap: 16px;
+    padding: 48px 144px 94.6px 144px;
+
+  @media (max-width: 599px) {
+    padding: 40px;
+    gap: 40px;
+  }
+
+  @media (min-width: 600px) {
+    padding: 40px;
+    gap: 40px;
+  }
+
+  @media (min-width: 767px) {
+    padding: 48px 80px;
+  }
+
+  @media (min-width: 991px) {
+    padding: 48px 144px 94.6px 144px;
+  }
 }
 
 .marketing-cards {
@@ -552,6 +1350,25 @@ button.meet-customers {
     align-items: flex-start;
     gap: 24px;
     height: 366px;
+
+  @media (max-width: 599px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 0px;
+    height: auto;
+  }
+
+  @media (min-width: 600px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 0px;
+    height: auto;
+  }
+
+   @media (min-width: 1200px) {
+    flex-direction: row;
+    gap: 24px;
+  }
 }
 
 .marketing-cards .pop-ups {
@@ -587,16 +1404,39 @@ button.meet-customers {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
 
-.demo {
-    padding: 32px 276.5px;
+  @media (max-width: 599px) {
+    max-width: 450px;
+    width: 100%;
+  }
+
+  @media (min-width: 600px) {
+    max-width: 450px;
+    width: 100%;
+  }
 }
 
 .demo-content {
   @include centered-col-flex();
   align-items: center;
+  padding: 32px 276.5px;
   gap: 32px;
+
+  @media (max-width: 599px) {
+    padding: 40px;
+  }
+
+  @media (min-width: 600px) {
+    padding: 40px;
+  }
+
+  @media (min-width: 767px) {
+    padding: 40px 80px;
+  }
+
+  @media (min-width: 991px) {
+    padding: 32px 144px;
+  }
 }
 
 .demo-header {
@@ -626,13 +1466,46 @@ button.meet-customers {
 
 .footer {
   background-color: $darkColor;
-  padding: 64px 165px;
 }
 
 .footer-menu {
   display: flex;
   flex-direction: row;
   gap: 125px;
+  padding: 64px 165px;
+
+  @media (max-width: 599px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    text-align: center;
+    padding: 40px;
+  }
+
+  @media (min-width: 600px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    text-align: center;
+    padding: 40px;
+  }
+
+  @media (min-width: 767px) {
+    padding: 40px 80px;
+  }
+
+  @media (min-width: 991px) {
+    flex-direction: row;
+    gap: 80px;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 64px 165px;
+  }
+
+  @media (min-width: 1400px) {
+    gap: 125px;
+  }
 }
 
 .footer p, h3 {
@@ -652,26 +1525,74 @@ button.meet-customers {
     gap: 40px;
     flex-direction: column;
     justify-content: space-between;
+
+  @media (max-width: 990px) {
+    align-items: center;
+    gap: 20px;
+  }
+
+  @media (min-width: 991px) {
+    align-items: flex-start;
+    max-width: 250px;
+    width: 100%;
+  }
 }
 
 .social-links {
-    display: flex;
-    flex-direction: row;
-    max-width: 32px;
-    width: 100%;
-    gap: 16px;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+
+  @media (max-width: 990px) {
+    justify-content: center;
+  } 
+
+  @media (min-width: 991px) {
+    flex-wrap: wrap;
+  } 
 }
 
 .footer-links {
     display: flex;
     flex-direction: row;
     gap: 30px;
+
+  @media (max-width: 599px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  @media (min-width: 600px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  @media (min-width: 991px) {
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+    gap: 50px;
+  }
+
+  @media (min-width: 1200px) {
+    gap: 60px;
+  }
 }
 
 .company, .support, .notifier {
     gap: 24px;
     display: flex;
     flex-direction: column;
+
+  @media (max-width: 767px) {
+    align-items: center;
+  }
+
+  @media (min-width: 991px) {
+    align-items: flex-start;
+  }
 }
 
 .comp-menu, .supp-menu {
@@ -679,12 +1600,20 @@ button.meet-customers {
   flex-direction: column;
   gap: 12px;
   width: 160px;
+
+  @media (max-width: 767px) {
+    align-items: center;
+  }
 }
 
 .copyright {
     gap: 8px;
     display: flex;
     flex-direction: column;
+
+  @media (min-width: 991px) {
+    text-align: left;
+  }
 }
 
 .notifier .contact-input {
@@ -704,6 +1633,10 @@ button.meet-customers {
   gap: 87px;
   background-color: $footerInputColor;
   align-items: center;
+
+  @media (max-width: 767px) {
+    max-width: 280px;
+  }
 }
 
 .contact-input input{
@@ -716,3 +1649,4 @@ button.meet-customers {
 .contact-input .send-btn {
   width: 18px;
 }
+
